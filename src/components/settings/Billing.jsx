@@ -108,8 +108,8 @@ function Billing() {
         <div className="flex flex-col my-3 w-full gap-2">
           {cards.map((card, index) => (
             <div
-              className={`flex items-start justify-between border-[1px] rounded-lg bg-[#fff] py-4 px-3 cursor-pointer ${
-                selectedCard === index ? "bg-[#7f56d915]" : ""
+              className={`flex items-start justify-between border-[1px] h-[130px] rounded-lg bg-[#fff] py-4 px-3 cursor-pointer ${
+                selectedCard === index ? "bg-[#7f56d967]" : ""
               }`}
               key={index}
               onClick={() => handleClick(index)}
