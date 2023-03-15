@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, Navigate } from "react-router-dom";
+import { Navbar, Sidebar } from "./components";
+import { Settings } from "./pages";
+import useMediaQuery from "./shared/hooks/useMediaQuery";
 
 function App() {
+  const isSmallScreen = useMediaQuery("(max-width: 1023px)");
+
+  const content = (
+    <Routes>
+      <Route path="/" element={<Navigate to="settings" replace />} />
+      <Route path="settings" element={<Settings />} />
+    </Routes>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative flex flex-row">
+      {isSmallScreen ? (
+        <div className="flex-1 max-sm:w-full">
+          <Navbar />
+          {content}
+        </div>
+      ) : (
+        <div className="sm:flex hidden relative">
+          <Sidebar />
+          {content}
+        </div>
+      )}
     </div>
   );
 }
