@@ -19,6 +19,7 @@ import {
   Paper,
   Button,
   TableSortLabel,
+  IconButton,
 } from "@mui/material";
 
 const headCells = [
@@ -128,7 +129,7 @@ export default function BillTable() {
                 <TableCell align="left">
                   {row.status === true ? (
                     <>
-                      <span className="bg-green-100 text-green-500 w-[70px] items-center  px-[0.4rem] py-1 gap-1 flex flex-row rounded-xl  ">
+                      <span className="bg-green-100 text-green-500 w-[65px] items-center  px-[0.4rem] py-1 gap-1 flex flex-row rounded-xl  ">
                         <b>✔</b> Paid
                       </span>
                     </>
@@ -142,11 +143,9 @@ export default function BillTable() {
                   <img src={row.usersOnPlan} alt="user plans" />
                 </TableCell>
                 <TableCell align="left">
-                  <img
-                    src={download}
-                    alt="download"
-                    className="cursor-pointer"
-                  />
+                  <IconButton>
+                    <CloudDownloadOutlined />
+                  </IconButton>
                 </TableCell>
               </TableRow>
             ))}
