@@ -3,7 +3,13 @@ import {
   MailOutline,
   RadioButtonUnchecked,
 } from "@mui/icons-material";
-import { Divider, RadioGroup, FormControlLabel, Radio } from "@mui/material";
+import {
+  Divider,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Box,
+} from "@mui/material";
 import React, { useState } from "react";
 import { masterCard, visaCard } from "../../shared/assets";
 import { InputField } from "../../shared/components/CustomInputField";
@@ -107,39 +113,44 @@ function Billing() {
         </div>
         <div className="flex flex-col my-3 w-full gap-2">
           {cards.map((card, index) => (
-            <div
-              className={`flex items-start justify-between border-[1px] h-[130px] rounded-lg bg-[#fff] py-4 px-3 cursor-pointer ${
-                selectedCard === index ? "bg-[#7f56d967]" : ""
-              }`}
-              key={index}
-              onClick={() => handleClick(index)}
+            <Box
+              sx={{
+                backgroundColor: selectedCard === index ? "#7f56d92c" : "",
+                borderRadius: "8px",
+              }}
             >
-              <div className="flex w-full">
-                <div className="flex items-start gap-4">
-                  <img src={card.img} alt={card.start} />
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[16px] font-medium">
-                      {card.start}
-                    </span>
-                    <span className="text-[14px]">{card.end}</span>
-                    <span className="text-[14px]">
-                      Set as default <b>Edit</b>
-                    </span>
+              <div
+                className={`flex items-start justify-between border-[1px] h-[130px]  rounded-lg  py-4 px-3 cursor-pointer`}
+                key={index}
+                onClick={() => handleClick(index)}
+              >
+                <div className="flex w-full">
+                  <div className="flex items-start gap-4">
+                    <img src={card.img} alt={card.start} />
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[16px] font-medium">
+                        {card.start}
+                      </span>
+                      <span className="text-[14px]">{card.end}</span>
+                      <span className="text-[14px]">
+                        Set as default <b>Edit</b>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {index === selectedCard ? (
-                <CheckCircle
-                  onClick={() => handleClick(index)}
-                  style={{
-                    color: "#7f56d9",
-                  }}
-                />
-              ) : (
-                <RadioButtonUnchecked onClick={() => handleClick(index)} />
-              )}
-            </div>
+                {index === selectedCard ? (
+                  <CheckCircle
+                    onClick={() => handleClick(index)}
+                    style={{
+                      color: "#7f56d9",
+                    }}
+                  />
+                ) : (
+                  <RadioButtonUnchecked onClick={() => handleClick(index)} />
+                )}
+              </div>
+            </Box>
           ))}
 
           <span className="cursor-pointer">+ Add new payment method</span>
