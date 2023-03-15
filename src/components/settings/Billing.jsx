@@ -127,13 +127,14 @@ function Billing() {
                 <div className="flex w-full">
                   <div className="flex items-start gap-4">
                     <img src={card.img} alt={card.start} />
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-[0.3rem]">
                       <span className="text-[16px] font-medium">
                         {card.start}
                       </span>
                       <span className="text-[14px]">{card.end}</span>
                       <span className="text-[14px]">
-                        Set as default <b>Edit</b>
+                        Set as default{" "}
+                        <b className=" ml-2 text-[#6941C6]">Edit</b>
                       </span>
                     </div>
                   </div>
