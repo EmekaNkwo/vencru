@@ -108,14 +108,14 @@ function Billing() {
         <div className="flex flex-col my-3 w-full gap-2">
           {cards.map((card, index) => (
             <div
-              className={`flex items-start justify-between border-[1px] rounded-lg bg-[#fff] p-3 cursor-pointer ${
+              className={`flex items-start justify-between border-[1px] rounded-lg bg-[#fff] py-4 px-3 cursor-pointer ${
                 selectedCard === index ? "bg-[#7f56d915]" : ""
               }`}
               key={index}
               onClick={() => handleClick(index)}
             >
               <div className="flex w-full">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4">
                   <img src={card.img} alt={card.start} />
                   <div className="flex flex-col gap-1">
                     <span className="text-[16px] font-medium">

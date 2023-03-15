@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { tableRows } from "../../shared/constants";
-import { download } from "../../shared/assets";
 
 import {
   CloudDownloadOutlined,

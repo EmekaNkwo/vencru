@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Logo, logout, OneAvatar, play, updateImage } from "../shared/assets";
+import { Logo, logout, OneAvatar, updateImage } from "../shared/assets";
 import { InputField } from "../shared/components/CustomInputField";
 import { navlinks } from "../shared/constants";
 import SearchIcon from "@mui/icons-material/Search";
@@ -23,7 +23,7 @@ const NavLink = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
         {name === "Dashboard" ? (
           <div className="flex ">
             <span className="flex items-center ">{name}</span>
-            <span className="ml-[100%] w-[10] h-[10] p-[0.4rem] bg-[#eee] rounded-full">
+            <span className="ml-[8.2rem] w-[10] h-[10] p-[0.4rem] bg-[#eee] rounded-full">
               10
             </span>
           </div>
