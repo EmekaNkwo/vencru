@@ -95,7 +95,7 @@ function Settings() {
               <Tab label="Password" disabled />
               <Tab label="Team" disabled />
               <Tab label="Plan" disabled />
-              <Tab label="Billing" {...a11yProps(0)} />
+              <Tab label="Billing" {...a11yProps(5)} />
               <Tab label="Notifications" disabled />
               <Tab label="Integrations" disabled />
               <Tab label="API" disabled />
