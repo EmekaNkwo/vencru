@@ -1,4 +1,4 @@
-# VENCRU FRONTEND ASSESSMENT
+# SIMPLE ADMIN PANEL
 
 ## Overview [Live Demo](https://vencru-nkwo.vercel.app/)
 
